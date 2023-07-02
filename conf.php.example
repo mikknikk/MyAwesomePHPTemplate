@@ -1,0 +1,37 @@
+<?php
+/** conf.php
+ * This is the app's configuration file. Required from main.php.
+ * Rename conf.php.example --> conf.php and make appropriate changes.
+ */
+
+// Some basic configurations
+define('APP_NAME', 'My App');
+define('APP_URL', 'http://localhost/');
+define('APP_DIR', '/var/www/html/');
+define('LOG_DIR', '/var/www/logs/');
+
+// Users are stored in an array, for example:
+// 'admin' => password_hash('password123', PASSWORD_DEFAULT),
+define('USERS', [
+    'admin' => password_hash('password123', PASSWORD_DEFAULT),
+]);
+
+// Settings for enabling and disabling different log types and configuring their filenames
+define('LOGS', [
+    'csrf' => [
+        'file' => 'csrf.log',
+        'write_logs' => true,
+    ],
+    'login' => [
+        'file' => 'login.log',
+        'write_logs' => true,
+    ],
+]);
+
+// These are used by the redirect() function
+define('INDEX_PAGE', 'index');
+define('LOGIN_PAGE', 'login');
+define('ALLOWED_PAGES', [
+    'index',
+    'login',
+]);
